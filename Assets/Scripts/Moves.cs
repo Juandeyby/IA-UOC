@@ -1,50 +1,60 @@
-﻿using System;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Moves : MonoBehaviour
 {
-    public NavMeshAgent agent;
-    public Collider floor;
-    public float radius = 2f;
-    public float offset = 3f;
+    public GameObject target;
+    public float maxVelocity = 7f;
+    public float turnSpeed = 2f;
+    public float maxDistance = 3f;
+    public bool vehicle = true;
+    Vector3 movement = Vector3.zero;
+    Quaternion rotation;  
+    float freq = 0f;
 
     void Start()
     {
-        Wander();
+        Seek();
+    }
+    
+    void Seek()
+    {
+        Vector3 direction = target.transform.position - transform.position;
+        direction.y = 0f;
+        movement = direction.normalized * maxVelocity;
+        float angle = Mathf.Rad2Deg * Mathf.Atan2(movement.x, movement.z);
+        rotation = Quaternion.AngleAxis(angle, Vector3.up);
     }
 
+    void updateAnimal(float dt)
+    {
+        if (Mathf.Abs(Vector3.Angle(transform.forward, movement)) > 5) 
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, dt * turnSpeed);
+        else
+            transform.position += movement * dt;
+    }
+
+    void updateVehicle(float dt)
+    {
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, dt * turnSpeed);
+        transform.position += transform.forward.normalized * maxVelocity * dt;
+    }
+    
     void Update()
     {
-        if (agent.remainingDistance < .2f) 
+        if (Vector3.Distance(target.transform.position, transform.position) < maxDistance) return;
+
+        freq += Time.deltaTime;
+        if (freq > 0.5)
         {
-            Wander();
+            freq -= 0.5f;
+            Seek(); 
         }
-    }
 
-    void Seek(Vector3 pos)
-    {
-        agent.destination = pos; 
-    }
-
-    void Wander()
-    {
-        Vector3 localTarget =  UnityEngine.Random.insideUnitSphere;
-        localTarget.y = 0f;
-        localTarget.Normalize();
-        localTarget *= radius;
-        localTarget += new Vector3(0, 0, offset);
-
-        Vector3 worldTarget = transform.TransformPoint(localTarget);
-        worldTarget.y = 0f;
-
-        if (floor.bounds.Contains(worldTarget))
-        {
-            Seek(worldTarget);
-        }
+        if (vehicle)
+            updateVehicle(Time.deltaTime);
         else
-        { 
-            Seek(transform.TransformPoint(-localTarget));
-        }
+            updateAnimal(Time.deltaTime);
     }
 }
