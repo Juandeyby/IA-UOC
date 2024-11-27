@@ -9,9 +9,10 @@ using UnityEngine.Serialization;
 [DefaultExecutionOrder(-1)]
 public class LeaderSecurityAgent : MonoBehaviour
 {
-    [SerializeField] private MovementGhost movementGhost;
+    [SerializeField] private Transform movementGhost;
     [SerializeField] private NavMeshAgent agent;
     private Dictionary<int, Vector3> _positions = new Dictionary<int, Vector3>();
+    private Dictionary<int, Quaternion> _rotations = new Dictionary<int, Quaternion>();
     private Dictionary<int, SecurityAgent> _agents = new Dictionary<int, SecurityAgent>();
     private int _row = 3;
     private int _column = 3;
