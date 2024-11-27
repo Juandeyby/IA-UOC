@@ -38,7 +38,7 @@ public class Flock : MonoBehaviour
         var cohesion = Vector3.zero;
         var separation = Vector3.zero;
         var alignment = Vector3.zero;
-        int numFlocks = 0;
+        var numFlocks = 0;
         
         foreach (var flock in Manager.AllFlocks)
         {

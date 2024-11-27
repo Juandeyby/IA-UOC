@@ -8,8 +8,8 @@ public class FlockingManager : MonoBehaviour
     [SerializeField] private int numFlocks = 20;
     [SerializeField] private float limit = 5f;
     [SerializeField] private Flock[] allFlocks;
-    public Flock[] AllFlocks { get => allFlocks; }
-    
+    public Flock[] AllFlocks => allFlocks;
+
     [Header("Flocking Settings")]
     [Range(0.0f, 5.0f)]
     public float minSpeed;
