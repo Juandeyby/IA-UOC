@@ -25,11 +25,15 @@ public class FlockingManager : MonoBehaviour
         allFlocks = new Flock[numFlocks];
         for (var i = 0; i < numFlocks; ++i)
         {
+            // Aleatorizamos la posicion de los agentes
             var pos = this.transform.position + new Vector3(Random.Range(-limit, limit),
                                                                 Random.Range(-limit, limit),
                                                                 Random.Range(-limit, limit));
+            // Aleatorizamos la rotacion de los agentes
             var randomize = new Vector3 (Random.value * 2 - 1, Random.value * 2 - 1, Random.value * 2 - 1);
+            // Instanciamos los agentes
             allFlocks[i] = Instantiate(flockPrefab, pos, Quaternion.LookRotation(randomize), transform);
+            // Asignamos el manager a los agentes
             allFlocks[i].Manager = this;
         }
     }
