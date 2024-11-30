@@ -38,6 +38,7 @@ public class Flock : MonoBehaviour
         var cohesion = Vector3.zero;
         var separation = Vector3.zero;
         var alignment = Vector3.zero;
+        var queenAttraction = Vector3.zero;
         var numFlocks = 0;
         
         foreach (var flock in Manager.AllFlocks)
@@ -55,13 +56,22 @@ public class Flock : MonoBehaviour
             }
         }
         
+        if (Manager.Queen != null)
+        {
+            var distanceToQueen = Vector3.Distance(Manager.Queen.position, transform.position);
+            if (distanceToQueen > 0.1f) // Evita fuerzas extremadamente altas
+            {
+                queenAttraction = (Manager.Queen.position - transform.position).normalized * Manager.queenInfluence;
+            }
+        } 
+        
         if (numFlocks > 0)
         {
             alignment /= numFlocks;
             _speed = Mathf.Clamp(alignment.magnitude, Manager.minSpeed, Manager.maxSpeed);
             cohesion = (cohesion / numFlocks - transform.position).normalized * _speed;
             
-            _direction = (cohesion + alignment + separation).normalized * _speed;
+            _direction = (cohesion + alignment + separation + queenAttraction).normalized * _speed;
         }
     }
 }

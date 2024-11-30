@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FlockingManager : MonoBehaviour
 {
+    public Transform Queen; // Transform de la reina
+    public float queenInfluence = 2.0f; // Influencia de la reina en las reglas de flocking
+
     [SerializeField] private Flock flockPrefab;
     [SerializeField] private int numFlocks = 20;
     [SerializeField] private float limit = 5f;
