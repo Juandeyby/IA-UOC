@@ -28,7 +28,10 @@ public class MovementToEnemies : Action
             return Status.Success;
         }
         var direction = (hitCollider.transform.position - Agent.Value.transform.position).normalized;
-        Agent.Value.transform.position += direction * (5 * Time.deltaTime);
+        var newPosition = Agent.Value.transform.position + direction * (5 * Time.deltaTime);
+        newPosition.y = Mathf.Max(newPosition.y, 2.0f);
+        Agent.Value.transform.position = newPosition;
+        
         var rotation = Quaternion.LookRotation(direction);
         Agent.Value.transform.rotation = Quaternion.Slerp(Agent.Value.transform.rotation, rotation, 5 * Time.deltaTime);
 

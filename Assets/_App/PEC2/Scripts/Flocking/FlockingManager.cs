@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Muse.Behavior;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class FlockingManager : MonoBehaviour
 {
-    public Transform Queen; // Transform de la reina
+    public Transform queen; // Transform de la reina
     public float queenInfluence = 2.0f; // Influencia de la reina en las reglas de flocking
 
     [SerializeField] private Flock flockPrefab;

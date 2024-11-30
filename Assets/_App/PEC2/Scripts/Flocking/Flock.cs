@@ -56,12 +56,12 @@ public class Flock : MonoBehaviour
             }
         }
         
-        if (Manager.Queen != null)
+        if (Manager.queen != null)
         {
-            var distanceToQueen = Vector3.Distance(Manager.Queen.position, transform.position);
+            var distanceToQueen = Vector3.Distance(Manager.queen.position, transform.position);
             if (distanceToQueen > 0.1f) // Evita fuerzas extremadamente altas
             {
-                queenAttraction = (Manager.Queen.position - transform.position).normalized * Manager.queenInfluence;
+                queenAttraction = (Manager.queen.position - transform.position).normalized * Manager.queenInfluence;
             }
         } 
         
