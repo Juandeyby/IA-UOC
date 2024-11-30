@@ -6,6 +6,7 @@ TagManager:
   tags:
   - hide
   - ghost
+  - security
   layers:
   - Default
   - TransparentFX
