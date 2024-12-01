@@ -38,7 +38,7 @@ public class Flock : MonoBehaviour
         var cohesion = Vector3.zero;
         var separation = Vector3.zero;
         var alignment = Vector3.zero;
-        var queenAttraction = Vector3.zero;
+        var queenAttraction = Vector3.zero; // Atracción hacia la reina
         var numFlocks = 0;
         
         foreach (var flock in Manager.AllFlocks)
@@ -56,11 +56,14 @@ public class Flock : MonoBehaviour
             }
         }
         
+        // Añadimos la influencia de la reina
         if (Manager.queen != null)
         {
+            // Calculamos la distancia a la reina
             var distanceToQueen = Vector3.Distance(Manager.queen.position, transform.position);
             if (distanceToQueen > 0.1f) // Evita fuerzas extremadamente altas
             {
+                // Calculamos la fuerza de atracción de la reina
                 queenAttraction = (Manager.queen.position - transform.position).normalized * Manager.queenInfluence;
             }
         } 
@@ -71,6 +74,7 @@ public class Flock : MonoBehaviour
             _speed = Mathf.Clamp(alignment.magnitude, Manager.minSpeed, Manager.maxSpeed);
             cohesion = (cohesion / numFlocks - transform.position).normalized * _speed;
             
+            // Añadimos la influencia de la reina
             _direction = (cohesion + alignment + separation + queenAttraction).normalized * _speed;
         }
     }

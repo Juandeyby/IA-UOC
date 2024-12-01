@@ -18,7 +18,7 @@ public class MovementToTree : Action
 
     protected override Status OnUpdate()
     {
-        if (Vector3.Distance(Leader.Value.transform.position, Hive.Value.transform.position) < 1f)
+        if (Vector3.Distance(Leader.Value.transform.position, Hive.Value.transform.position) < 0.1f)
         {
             return Status.Success;
         }

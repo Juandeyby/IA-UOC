@@ -212,9 +212,9 @@ MonoBehaviour:
   m_Name: Muse Behavior Graph
   m_EditorClassIdentifier: 
   Graphs:
-  - rid: 8109224409792512319
+  - rid: 8109224409792512376
   RootGraph:
-    rid: 8109224409792512319
+    rid: 8109224409792512376
   m_DebugInfo: {fileID: -2271803400035494573}
   m_GraphJson: '{"Graphs":[{"$id":"1","AuthoringAssetID":{"m_Value0Signed":5954274904305865004,"m_Value1Signed":2368022085880414582},"Root":{"__TYPE":"Unity.Muse.Behavior.Start,
     Unity.Muse.Behavior, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$id":"Unity.Muse.Behavior.Node
@@ -254,7 +254,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 8109224409792512319
+    - rid: 8109224409792512376
       type: {class: BehaviorGraphModule, ns: Unity.Muse.Behavior, asm: Unity.Muse.Behavior}
       data:
         Asset: {fileID: 11400000}
@@ -263,11 +263,11 @@ MonoBehaviour:
           m_Value1: 11591394122735190390
         m_DebugInfo: {fileID: 0}
         Root:
-          rid: 8109224409792512320
+          rid: 8109224409792512377
         m_Blackboard:
-          rid: 8109224409792512321
+          rid: 8109224409792512378
         m_VersionTimestamp: 638685858641828931
-    - rid: 8109224409792512320
+    - rid: 8109224409792512377
       type: {class: Start, ns: Unity.Muse.Behavior, asm: Unity.Muse.Behavior}
       data:
         ID:
@@ -279,6 +279,6 @@ MonoBehaviour:
             m_Value1: 0
           Name: 
           m_Value: 1
-    - rid: 8109224409792512321
+    - rid: 8109224409792512378
       type: {class: Blackboard, ns: Unity.Muse.Behavior, asm: Unity.Muse.Behavior}
       data: 
