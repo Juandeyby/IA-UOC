@@ -25,7 +25,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad8f2220607dac4db5082ff333fafb8, type: 3}
   m_Name: LeaderFlock
   m_EditorClassIdentifier: 
-  m_VersionTimestamp: 638685858641828931
+  m_VersionTimestamp: 638699380269115120
   m_AssetJson: '{"m_Nodes":[{"__TYPE":"Unity.Muse.Behavior.StartNodeModel, Unity.Muse.Behavior,
     Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$id":"Graph.NodeModel
     0","m_RepeatField":{"__TYPE":"Unity.Muse.Behavior.BehaviorGraphNodeModel+FieldModel,
@@ -40,7 +40,7 @@ MonoBehaviour:
     0"},"m_Connections":{"$id":"2","$values":[]},"Name":"OutputPort","PortDataFlowType":1}],"Type":"Unity.Muse.Behavior.StartNodeModel,
     Unity.Muse.Behavior, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"}],"m_Variables":[],"__TYPE":"Unity.Muse.Behavior.BehaviorAuthoringGraph,
     Unity.Muse.Behavior, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"}'
-  m_DebugInfo: {fileID: -2271803400035494573}
+  m_DebugInfo: {fileID: 2381088276099057086}
   AssetID:
     m_Value0: 15177646941160640812
     m_Value1: 11591394122735190390
@@ -63,6 +63,19 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!114 &2381088276099057086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b27bb6d9a2c8d540a10dff10acc543e, type: 3}
+  m_Name: LeaderFlock Debug Info
+  m_EditorClassIdentifier: 
+  m_CodeBreakPointsList: []
 --- !u!114 &5545513622468724985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,10 +89,10 @@ MonoBehaviour:
   m_Name: Muse Behavior Graph
   m_EditorClassIdentifier: 
   Graphs:
-  - rid: 8220924560210395139
+  - rid: 8220924578459287738
   RootGraph:
-    rid: 8220924560210395139
-  m_DebugInfo: {fileID: -2271803400035494573}
+    rid: 8220924578459287738
+  m_DebugInfo: {fileID: 2381088276099057086}
   m_GraphJson: '{"Graphs":[{"$id":"1","AuthoringAssetID":{"m_Value0Signed":5954274904305865004,"m_Value1Signed":2368022085880414582},"Root":{"__TYPE":"Unity.Muse.Behavior.Start,
     Unity.Muse.Behavior, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$id":"Unity.Muse.Behavior.Node
     0","Repeat":{"__TYPE":"Unity.Muse.Behavior.BlackboardVariable`1[[System.Boolean,
@@ -90,7 +103,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 8220924560210395139
+    - rid: 8220924578459287738
       type: {class: BehaviorGraphModule, ns: Unity.Muse.Behavior, asm: Unity.Muse.Behavior}
       data:
         Asset: {fileID: 11400000}
@@ -99,11 +112,11 @@ MonoBehaviour:
           m_Value1: 11591394122735190390
         m_DebugInfo: {fileID: 0}
         Root:
-          rid: 8220924560210395140
+          rid: 8220924578459287739
         m_Blackboard:
-          rid: 8220924560210395141
-        m_VersionTimestamp: 638685858641828931
-    - rid: 8220924560210395140
+          rid: 8220924578459287740
+        m_VersionTimestamp: 638699380269115120
+    - rid: 8220924578459287739
       type: {class: Start, ns: Unity.Muse.Behavior, asm: Unity.Muse.Behavior}
       data:
         ID:
@@ -115,6 +128,6 @@ MonoBehaviour:
             m_Value1: 0
           Name: 
           m_Value: 0
-    - rid: 8220924560210395141
+    - rid: 8220924578459287740
       type: {class: Blackboard, ns: Unity.Muse.Behavior, asm: Unity.Muse.Behavior}
       data: 
