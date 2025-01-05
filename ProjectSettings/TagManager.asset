@@ -6,6 +6,11 @@ TagManager:
   tags:
   - hide
   - ghost
+  - security
+  - target
+  - wall
+  - goal
+  - ground
   layers:
   - Default
   - TransparentFX
