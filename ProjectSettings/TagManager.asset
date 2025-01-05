@@ -8,6 +8,9 @@ TagManager:
   - ghost
   - security
   - target
+  - wall
+  - goal
+  - ground
   layers:
   - Default
   - TransparentFX
