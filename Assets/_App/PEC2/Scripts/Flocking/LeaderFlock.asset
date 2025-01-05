@@ -25,7 +25,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad8f2220607dac4db5082ff333fafb8, type: 3}
   m_Name: LeaderFlock
   m_EditorClassIdentifier: 
-  m_VersionTimestamp: 638716252174752352
+  m_VersionTimestamp: 638716278958118446
   m_AssetJson: '{"m_Nodes":[{"__TYPE":"Unity.Muse.Behavior.StartNodeModel, Unity.Muse.Behavior,
     Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$id":"Graph.NodeModel
     0","m_RepeatField":{"__TYPE":"Unity.Muse.Behavior.BehaviorGraphNodeModel+FieldModel,
@@ -89,9 +89,9 @@ MonoBehaviour:
   m_Name: Muse Behavior Graph
   m_EditorClassIdentifier: 
   Graphs:
-  - rid: 4469667714661090100
+  - rid: 4469667714661090106
   RootGraph:
-    rid: 4469667714661090100
+    rid: 4469667714661090106
   m_DebugInfo: {fileID: 2381088276099057086}
   m_GraphJson: '{"Graphs":[{"$id":"1","AuthoringAssetID":{"m_Value0Signed":5954274904305865004,"m_Value1Signed":2368022085880414582},"Root":{"__TYPE":"Unity.Muse.Behavior.Start,
     Unity.Muse.Behavior, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null","$id":"Unity.Muse.Behavior.Node
@@ -103,7 +103,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 4469667714661090100
+    - rid: 4469667714661090106
       type: {class: BehaviorGraphModule, ns: Unity.Muse.Behavior, asm: Unity.Muse.Behavior}
       data:
         Asset: {fileID: 11400000}
@@ -112,11 +112,11 @@ MonoBehaviour:
           m_Value1: 11591394122735190390
         m_DebugInfo: {fileID: 2381088276099057086}
         Root:
-          rid: 4469667714661090101
+          rid: 4469667714661090107
         m_Blackboard:
-          rid: 4469667714661090102
+          rid: 4469667714661090108
         m_VersionTimestamp: 0
-    - rid: 4469667714661090101
+    - rid: 4469667714661090107
       type: {class: Start, ns: Unity.Muse.Behavior, asm: Unity.Muse.Behavior}
       data:
         ID:
@@ -128,6 +128,6 @@ MonoBehaviour:
             m_Value1: 0
           Name: 
           m_Value: 0
-    - rid: 4469667714661090102
+    - rid: 4469667714661090108
       type: {class: Blackboard, ns: Unity.Muse.Behavior, asm: Unity.Muse.Behavior}
       data: 

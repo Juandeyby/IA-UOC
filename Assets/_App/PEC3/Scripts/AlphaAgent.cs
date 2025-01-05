@@ -16,8 +16,6 @@ public class AlphaAgent : Agent
     { 
         transform.localPosition = new Vector3(0, 0.5f, 0);
         
-//        transform.localPosition = new Vector3(0, 0.5f, 0);
-//        transform.localRotation = Quaternion.identity;
         foreach (var g in goal)
         {
             g.gameObject.SetActive(true);
@@ -66,37 +64,38 @@ public class AlphaAgent : Agent
         transform.position += transform.forward * Time.fixedDeltaTime * 2.0f;
         transform.position += dirToGo * Time.fixedDeltaTime * 1.5f;
         
+        // If the agent falls, end the episode and penalize
         if (transform.localPosition.y < 0)
         {
             SetReward(-1f);
             EndEpisode();
         }
         
+        // Penalize for not reaching the goal through time
         AddReward(-0.0001f);
     }
 
     public void OnTriggerEnter(Collider other)
     {
+        // If the agent touches the goal, reward it
         if (other.CompareTag("goal"))
         {
             AddReward(0.01f);
             var g = other.GetComponent<Goal>();
             g.DisableCollider();
         }
+        // Penalize for hitting the wall
         if (other.transform.CompareTag("wall"))
         {
-            // SetReward(-1f);
-            // EndEpisode();
             AddReward(-0.0002f);
         }
     }
 
+    // Penalize for hitting the wall
     public void OnTriggerStay(Collider other)
     {
         if (other.transform.CompareTag("wall"))
         {
-            // SetReward(-1f);
-            // EndEpisode();
             AddReward(-0.0002f);
         }
     }
